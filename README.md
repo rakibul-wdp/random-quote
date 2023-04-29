@@ -1,0 +1,1 @@
+# Make Fun Of JavaScript Array
