@@ -18,8 +18,16 @@ const names = ["Abul", "Babul", "Cabul"];
 names[0] = "Cabul";
 names[1] = "Chandu";
 names[2] = "Abul";
-console.log(names);
+// console.log(names);
 
 // Fill Array and Update
+const response = new Array(9);
+response.fill(false);
+for (let i = 0; i < response.length; i++) {
+  const rand = Math.floor(Math.random() * 10 * 1);
+  response[i] = rand > 5 ? "X" : "O";
+}
+
+console.log(response);
 
 // Array is mutable
