@@ -28,6 +28,17 @@ for (let i = 0; i < response.length; i++) {
   response[i] = rand > 5 ? "X" : "O";
 }
 
-console.log(response);
+// console.log(response);
 
 // Array is mutable
+function update(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = `${i + 1}. ${arr[i]}`;
+  }
+  return arr;
+}
+
+const updatedNames = update(names);
+console.log(names);
+console.log(updatedNames);
+console.log(names === updatedNames);
