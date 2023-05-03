@@ -47,7 +47,20 @@ for (let i = 0; i < arr.length; i++) {
     largestNumber = arr[i];
   }
 }
-console.log(largestNumber);
+// console.log(largestNumber);
+
+// Find Second Large Number
+let highest = -Infinity;
+let secondHighest = -Infinity;
+
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] > highest) {
+    secondHighest = highest;
+    highest = arr[i];
+  }
+}
+
+// console.log(highest, secondHighest);
 
 // Find Small Number
 let smallestNumber = arr[0];
@@ -56,4 +69,17 @@ for (let i = 0; i < arr.length; i++) {
     smallestNumber = arr[i];
   }
 }
-console.log(smallestNumber);
+// console.log(smallestNumber);
+
+// Find Second small number
+let smallest = Infinity;
+let secondSmallest = Infinity;
+
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] < smallest) {
+    secondSmallest = smallest;
+    smallest = arr[i];
+  }
+}
+
+console.log(smallest, secondSmallest);
