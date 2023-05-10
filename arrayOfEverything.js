@@ -62,9 +62,37 @@ for (let i = 0; i < numbers.length; i++) {
 
 for (let i = 0; i < pointTable.length; i++) {
   for (let j = 0; j < pointTable[i].length; j++) {
-    console.log(`Points [${i}, ${j}] = ${pointTable[i][j]}`);
+    // console.log(`Points [${i}, ${j}] = ${pointTable[i][j]}`);
   }
 }
+
+// Matrix Example
+const matrixA = [
+  [1, 2],
+  [1, 0],
+  [1, 2],
+];
+
+const matrixB = [
+  [0, 0],
+  [7, 5],
+  [2, 1],
+];
+
+const matrixSum = (matrixA, matrixB) => {
+  const result = [];
+  for (let i = 0; i < matrixA.length; i++) {
+    const row = [];
+    for (let j = 0; j < matrixA[i].length; j++) {
+      row.push(matrixA[i][j] + matrixB[i][j])
+    }
+    result.push(row);
+  }
+  return result;
+}
+
+const matrixC = matrixSum(matrixA, matrixB);
+console.log(matrixC);
 
 /**
  * [
