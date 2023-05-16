@@ -22,6 +22,12 @@ const filePath = path.resolve(
       saveFile(todo.todoList, filePath);
       break;
     }
+    case UPDATE: {
+      todo.update(argv.id, argv.text);
+      console.log("Todo Updated");
+      saveFile(todo.todoList, filePath);
+      break;
+    }
     default:
       throw new Error("Command Not Found");
   }
