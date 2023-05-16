@@ -15,5 +15,14 @@ const filePath = path.resolve(
   const todo = new Todo(data);
   const { _: baseCommand } = argv;
 
-
+  switch (baseCommand[0]) {
+    case ADD: {
+      todo.addItem(argv.text);
+      console.log("Todo Added");
+      saveFile(todo.todoList, filePath);
+      break;
+    }
+    default:
+      throw new Error("Command Not Found");
+  }
 })();
