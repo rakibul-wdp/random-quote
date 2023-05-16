@@ -33,6 +33,12 @@ const filePath = path.resolve(
       console.log(`${item.id} - ${item.text} [${item.created}]`);
       break;
     }
+    case DONE: {
+      todo.done();
+      console.log("One Item Completed");
+      saveFile(todo.todoList, filePath);
+      break;
+    }
     default:
       throw new Error("Command Not Found");
   }
