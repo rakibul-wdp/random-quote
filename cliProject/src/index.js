@@ -39,6 +39,17 @@ const filePath = path.resolve(
       saveFile(todo.todoList, filePath);
       break;
     }
+    case FIND: {
+      const items = todo.find(argv.term);
+      if (items.length === 0) {
+        console.log("No Item Found");
+        break;
+      }
+      for (let i = 0; i < items.length; i++) {
+        console.log(`${items[i].id} - ${items[i].text} [${items[i].created}]`);
+      }
+      break;
+    }
     default:
       throw new Error("Command Not Found");
   }
