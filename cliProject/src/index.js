@@ -50,6 +50,16 @@ const filePath = path.resolve(
       }
       break;
     }
+    case LIST: {
+      if (todo.todoList.length === 0) {
+        console.log("Empty List");
+        break;
+      }
+      for (let i = 0; i < todo.todoList.length; i++) {
+        console.log(`${todo.todoList[i].id} - ${todo.todoList[i].text} [${todo.todoList[i].created}]`);
+      }
+      break;
+    }
     default:
       throw new Error("Command Not Found");
   }
