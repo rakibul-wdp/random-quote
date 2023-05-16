@@ -28,6 +28,11 @@ const filePath = path.resolve(
       saveFile(todo.todoList, filePath);
       break;
     }
+    case NEXT: {
+      const item = todo.next();
+      console.log(`${item.id} - ${item.text} [${item.created}]`);
+      break;
+    }
     default:
       throw new Error("Command Not Found");
   }
