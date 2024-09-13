@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [quote, setQuote] = useState("");
+  const [savedQuotes, setSavedQuotes] = useState([]);
+
+  const fetchQuote = async () => {
+    const response = await fetch(
+      "https://ron-swanson-quotes.herokuapp.com/v2/quotes"
+    );
+    const data = await response.json();
+    setQuote(data[0]);
+  };
+
+  useEffect(() => {
+    fetchQuote();
+  }, []);
+
+  const saveQuote = () => {
+    setSavedQuotes((prev) => [...prev, quote]);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="app">
+      <h1>Random Ron Swanson Quote</h1>
+
+      <div className="quote-card">
+        <p>{quote}</p>
+        <button onClick={fetchQuote}>Get New Quote</button>
+        <button onClick={saveQuote}>Save to List</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      {savedQuotes.length > 0 && (
+        <div className="saved-quotes">
+          <h2>Saved Quotes</h2>
+          <ul>
+            {savedQuotes.map((q, index) => (
+              <li key={index}>{q}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </main>
+  );
 }
 
-export default App
+export default App;
