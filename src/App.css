@@ -43,3 +43,29 @@ button {
 button:hover {
   background-color: #45a049;
 }
+
+.saved-quotes {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+.saved-quotes h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.saved-quotes ul {
+  list-style: none;
+  padding: 0;
+}
+
+.saved-quotes li {
+  background-color: #f9f9f9;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 4px;
+  color: #333;
+}
