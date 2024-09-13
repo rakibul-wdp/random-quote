@@ -18,7 +18,11 @@ function App() {
   }, []);
 
   const saveQuote = () => {
-    setSavedQuotes((prev) => [...prev, quote]);
+    if (!savedQuotes.includes(quote)) {
+      setSavedQuotes((prev) => [...prev, quote]);
+    } else {
+      alert("This quote is already saved!");
+    }
   };
 
   return (
