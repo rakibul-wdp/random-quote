@@ -160,6 +160,7 @@ const UserOnboarding = ({ setLastJobId, setUserExists, isLoading }) => {
       const response = await fetch(
         `${process.env.REACT_APP_API_URL}/update_user_details`,
         {
+          mode: "no-cors",
           method: "POST",
           body: formDataToSend,
         }
