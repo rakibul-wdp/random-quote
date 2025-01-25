@@ -161,10 +161,6 @@ const UserOnboarding = ({ setLastJobId, setUserExists, isLoading }) => {
         `${process.env.REACT_APP_API_URL}/update_user_details`,
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-          },
           body: formDataToSend,
         }
       );
