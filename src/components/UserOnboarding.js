@@ -162,7 +162,8 @@ const UserOnboarding = ({ setLastJobId, setUserExists, isLoading }) => {
         {
           method: "POST",
           headers: {
-            Accept: "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
           },
           body: formDataToSend,
         }
