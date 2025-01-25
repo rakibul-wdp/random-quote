@@ -1,0 +1,777 @@
+.rag-form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.upload-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #f9fafb;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+  color: #2563eb;
+}
+
+.expand-icon {
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  margin-left: 8px; /* Space between title and icon */
+  transition: transform 0.2s; /* Smooth transition for rotation */
+}
+
+.toast-message {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #4b5563; /* Adjust color as needed */
+}
+
+.file-name {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #4b5563; /* Adjust color as needed */
+}
+
+.section-description {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.upload-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.upload-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.form-description {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.form-description p {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  width: 18px;
+  height: 18px;
+}
+
+.rag-form input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.rag-form input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.submit-button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.icon-button {
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  color: #ef4444;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button:hover {
+  background-color: #fee2e2;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: #f3f4f6;
+  border: none;
+}
+
+.delete-confirm-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+}
+
+.delete-confirm-button:hover {
+  background-color: #dc2626;
+}
+
+.icon-button.delete-button {
+  margin-left: 8px; /* Space between upload button and delete button */
+  color: #e53e3e; /* Red color for delete button */
+}
+
+/* Loading Spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ffffff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Add these new icon styles */
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Update icon button styles */
+.icon-button {
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  color: #ef4444;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Update form description styles */
+.form-description {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.evaluation-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.evaluation-table th,
+.evaluation-table td {
+  border: 1px solid #e5e7eb; /* Light gray border */
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.evaluation-table th {
+  background-color: #f3f4f6; /* Light background for header */
+  font-weight: bold;
+}
+
+.evaluation-table tr:nth-child(even) {
+  background-color: #f9fafb; /* Light background for even rows */
+}
+
+.evaluation-table tr:hover {
+  background-color: #e5e7eb; /* Highlight on hover */
+}
+
+.download-button {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #2563eb; /* Primary color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.download-button:hover {
+  background-color: #1d4ed8; /* Darker shade on hover */
+}
+.uploaded-file {
+  margin: 10px 0;
+}
+
+.file-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2563eb;
+  text-decoration: none;
+  padding: 8px 12px;
+  border: 1px solid #2563eb;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.file-link:hover {
+  background-color: #f0f7ff;
+}
+
+.link-icon {
+  width: 16px;
+  height: 16px;
+}
+.expand-icon {
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  margin-left: 8px; /* Space between title and icon */
+  transition: transform 0.2s; /* Smooth transition for rotation */
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.section-header:hover {
+  background-color: #f8fafc;
+}
+
+.section-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.status-badge.success {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.uploaded-file-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.uploaded-file-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.file-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.file-icon-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.file-type-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #4f46e5;
+  padding: 0.5rem;
+  background-color: #f5f3ff;
+  border-radius: 12px;
+}
+
+.file-status-dot {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  background-color: #22c55e;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.file-details {
+  flex: 1;
+}
+
+.file-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.file-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.file-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  background-color: #ecfdf5;
+  color: #059669;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+}
+
+.file-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.meta-icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.25rem;
+  vertical-align: text-bottom;
+}
+
+.file-actions {
+  display: flex;
+  gap: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.view-button {
+  background-color: #f3f4f6;
+  color: #111827;
+  border: none;
+  text-decoration: none;
+}
+
+.view-button:hover {
+  background-color: #e5e7eb;
+}
+
+.delete-button {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: none;
+}
+
+.delete-button:hover {
+  background-color: #fee2e2;
+}
+
+.action-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Add smooth hover transitions */
+.uploaded-file-card *,
+.action-button * {
+  transition: all 0.2s ease;
+}
+
+/* Add a subtle animation when the card appears */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.uploaded-file-card {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Add responsive styles */
+@media (max-width: 640px) {
+  .uploaded-file-card {
+    padding: 1rem;
+  }
+
+  .file-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .file-actions {
+    flex-direction: column;
+  }
+
+  .action-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.upload-dropzone {
+  margin-top: 1rem;
+}
+
+.dropzone-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border: 2px dashed #e5e7eb;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dropzone-area:hover {
+  border-color: #2563eb;
+  background-color: #f0f7ff;
+}
+
+.upload-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.upload-text {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.primary-text {
+  color: #1e293b;
+}
+
+.secondary-text {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.file-hint {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.delete-button.deleting {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.upload-button.uploading {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: #93c5fd;
+}
+
+.text-green-500 {
+  color: #22c55e;
+}
+
+.text-red-500 {
+  color: #ef4444;
+}
+
+.selected-file-preview {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f9fafb;
+  border: 1px dashed #d1d5db;
+  border-radius: 0.5rem;
+  gap: 1rem;
+}
+
+.selected-file-preview .file-type-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #6b7280;
+}
+
+.selected-file-preview .file-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.selected-file-preview .file-name {
+  font-weight: 500;
+  color: #374151;
+}
+
+.selected-file-preview .file-status {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.selected-file-preview .clear-selection {
+  padding: 0.5rem;
+  color: #6b7280;
+  transition: color 0.2s;
+}
+
+.selected-file-preview .clear-selection:hover {
+  color: #ef4444;
+}
+
+.selected-file-preview .clear-selection .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f9fafb;
+  border: 1px dashed #d1d5db;
+  border-radius: 0.5rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.loading-state .animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form-input[readonly],
+.form-input[disabled],
+.form-textarea[readonly],
+.form-select[disabled] {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Update the existing styles for readonly/disabled inputs */
+input[readonly],
+input[disabled],
+textarea[readonly],
+select[disabled] {
+  background-color: #f3f4f6 !important;
+  cursor: not-allowed !important;
+  opacity: 0.7 !important;
+  pointer-events: none !important;
+  border-color: #e5e7eb !important;
+}
+
+/* Add specific styles for the website input */
+.form-group input[type="url"][readonly],
+.form-group input[type="url"][disabled] {
+  background-color: #f3f4f6 !important;
+  cursor: not-allowed !important;
+  opacity: 0.7 !important;
+  pointer-events: none !important;
+  border-color: #e5e7eb !important;
+}
